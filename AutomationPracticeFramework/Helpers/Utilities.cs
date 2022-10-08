@@ -45,5 +45,7 @@ namespace AutomationPracticeFramework.Helpers
         {
             return driver.FindElement(locator).Text;
         }
+
+
     }
 }

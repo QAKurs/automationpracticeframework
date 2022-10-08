@@ -30,5 +30,6 @@ namespace AutomationPracticeFramework.Steps
             SearchResultsPage srp = new SearchResultsPage(Driver);
             Assert.That(ut.ReturnTextFromElement(srp.searchResult), Does.Contain(term), "Wrong search results are displayed");
         }
+
     }
 }

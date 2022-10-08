@@ -8,3 +8,4 @@ Scenario: User can search for a term
 	Given user enters 'dress' search term
 	When user submits the search
 	Then results for 'dress' search term are displayed
+	And testing assert

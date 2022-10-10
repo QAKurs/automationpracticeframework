@@ -36,5 +36,40 @@ namespace AutomationPracticeFramework.Steps
         {
             ScenarioContext.Current.Pending();
         }
+
+        [Given(@"initiates a flow for creating an account")]
+        public void GivenInitiatesAFlowForCreatingAnAccount()
+        {
+            AuthenticationPage ap = new AuthenticationPage(Driver);
+            ut.EnterTextInElement(ap.email, ut.GenerateRandomEmail());
+            ut.ClickOnElement(ap.createAcc);
+        }
+
+        [Given(@"user enters all required personal details")]
+        public void GivenUserEntersAllRequiredPersonalDetails()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [When(@"submits the sign up form")]
+        public void WhenSubmitsTheSignUpForm()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"user's full name is displayed")]
+        public void ThenUserSFullNameIsDisplayed()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Given(@"user is logged in")]
+        public void GivenUserIsLoggedIn()
+        {
+            GivenUserOpensSignInPage();
+            GivenEntersCorrectCredentials();
+            WhenUserSubmitsTheLoginForm();
+        }
+
     }
 }

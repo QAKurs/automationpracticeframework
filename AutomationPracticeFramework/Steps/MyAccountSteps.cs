@@ -10,6 +10,7 @@ namespace AutomationPracticeFramework.Steps
     {
         Utilities ut = new Utilities(Driver);
         HomePage hp = new HomePage(Driver);
+
         [Given(@"user opens sign in page")]
         public void GivenUserOpensSignInPage()
         {
@@ -19,7 +20,9 @@ namespace AutomationPracticeFramework.Steps
         [Given(@"enters correct credentials")]
         public void GivenEntersCorrectCredentials()
         {
-            ScenarioContext.Current.Pending();
+            AuthenticationPage ap = new AuthenticationPage(Driver);
+            ut.EnterTextInElement(ap.email, TestConstants.Username);
+            ut.EnterTextInElement(ap.password, TestConstants.Password);
         }
         
         [When(@"user submits the login form")]

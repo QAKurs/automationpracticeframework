@@ -1,15 +1,19 @@
-﻿using System;
+﻿using AutomationPracticeFramework.Helpers;
+using AutomationPracticeFramework.Pages;
+using System;
 using TechTalk.SpecFlow;
 
 namespace AutomationPracticeFramework.Steps
 {
     [Binding]
-    public class MyAccountSteps
+    public class MyAccountSteps : Base
     {
+        Utilities ut = new Utilities(Driver);
+        HomePage hp = new HomePage(Driver);
         [Given(@"user opens sign in page")]
         public void GivenUserOpensSignInPage()
         {
-            ScenarioContext.Current.Pending();
+            ut.ClickOnElement(hp.signIn);
         }
         
         [Given(@"enters correct credentials")]
@@ -18,7 +22,7 @@ namespace AutomationPracticeFramework.Steps
             ScenarioContext.Current.Pending();
         }
         
-        [StepDefinition(@"user submits the login form")]
+        [When(@"user submits the login form")]
         public void WhenUserSubmitsTheLoginForm()
         {
             ScenarioContext.Current.Pending();
